@@ -22,11 +22,12 @@ func InitDB() {
 	}
 
 	// Get database credentials from environment variables
-	user := os.Getenv("SQL_USER")
-	password := os.Getenv("SQL_PASSWORD")
-	host := os.Getenv("SQL_HOST")
-	port := os.Getenv("SQL_PORT")
-	database := os.Getenv("SQL_DB")
+	// Get database credentials from environment variables
+	user := os.Getenv("MYSQLUSER")
+	password := os.Getenv("MYSQL_ROOT_PASSWORD")
+	host := os.Getenv("MYSQLHOST")
+	port := os.Getenv("MYSQLPORT")
+	database := os.Getenv("MYSQL_DATABASE")
 
 	// MySQL connection string
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=true", user, password, host, port, database)
